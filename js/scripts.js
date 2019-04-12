@@ -1,24 +1,8 @@
-//Business Logic for Pizza Shop
-function Order() {
-  this.orderId = 0,
-  this.pizzas = []
-}
-
-Order.prototype.assignId = function() {
-  this.currentId += 1;
-  return this.currentId;
-}
-
-Order.prototype.addPizza = function(pizza) {
-  pizza.id = this.assignId();
-  this.pizzas.push(pizza);
-}
-
 //Business Logic for pizzas
 function Pizza (size, toppings, price) {
   this.size = size,
-  this.toppings = [],
-  this.price = price;
+  this.toppings = 0,
+  this.price = 0.00
 }
 
 Pizza.prototype.checkSize = function() {
@@ -34,30 +18,26 @@ Pizza.prototype.checkSize = function() {
 }
 
 Pizza.prototype.checkToppings = function() {
-  if (this.toppings.length === 0) {
+  if (this.toppings === 0) {
     this.price = this.price;
-  } else if (this.toppings.length <= 2) {
-    this.price += 1.5;
-  } else if (this.toppings.length <= 5) {
-    this.price += 3;
+  } else if (this.toppings <= 2) {
+    this.price += 1.50;
+  } else if (this.toppings <= 5) {
+    this.price += 3.00;
   } else {
-    this.price += 4.5;
+    this.price += 4.50;
   }
 }
 
 //User Interface Logic
-var order = new Order();
-
-
-
 $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
     var inputtedSize = $("size").val();
-    var inputtedToppings = $("input:radio[name=topping]:checked").val();
-    var newPizza = new Pizza(inputtedSize, inputtedToppings, price);
-    order.addPizza(newPizza);
+    var inputtedToppings = parseInt($("input:checkbox[name=topping]:checked").val());
+    var newPizza = new Pizza(inputtedSize, inputtedToppings);
     newPizza.checkSize();
     newPizza.checkToppings();
+    $("#order-cost").text("You ordered a " + newPizza.size + "pizza with " + newPizza.toppings + "added to it. Your total is " + "$" + newPizza.price);
   });
 });
