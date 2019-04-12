@@ -26,7 +26,7 @@ var order = new Order();
 $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
-    var inputtedSize = $("");
+    var inputtedSize = $("size").val();
     var inputtedToppings = $("");
     var newPizza = new Pizza(inputtedSize, inputtedToppings);
     order.addPizza(newPizza);
