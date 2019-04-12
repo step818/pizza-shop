@@ -1,8 +1,8 @@
 //Business Logic for pizzas
 function Pizza (size, toppings, price) {
   this.size = size,
-  this.toppings = 0,
-  this.price = 0.00
+  this.toppings = toppings,
+  this.price = 0.0
 }
 
 Pizza.prototype.checkSize = function() {
@@ -18,10 +18,12 @@ Pizza.prototype.checkSize = function() {
 }
 
 Pizza.prototype.checkToppings = function() {
-  if (this.toppings === 0) {
+  if (this.toppings.length === 0) {
     this.price = this.price;
-  } else if (this.toppings <= 2) {
+    console.log("hey");
+  } else if (this.toppings.length <= 2) {
     this.price += 1.50;
+    console.log("345");
   } else if (this.toppings <= 5) {
     this.price += 3.00;
   } else {
@@ -33,11 +35,13 @@ Pizza.prototype.checkToppings = function() {
 $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
-    var inputtedSize = $("size").val();
-    var inputtedToppings = parseInt($("input:checkbox[name=topping]:checked").val());
+    var inputtedSize = $("#size").val();
+    var inputtedToppings = []; $("input:checkbox[name=topping]:checked").each(function () {
+      inputtedToppings.push($(this).val());
+    });
     var newPizza = new Pizza(inputtedSize, inputtedToppings);
     newPizza.checkSize();
     newPizza.checkToppings();
-    $("#order-cost").text("You ordered a " + newPizza.size + "pizza with " + newPizza.toppings + "added to it. Your total is " + "$" + newPizza.price);
+    $("#order-cost").text("You ordered a " + newPizza.size + " pizza with " + newPizza.toppings + "added to it. Your total is " + "$" + newPizza.price.toFixed(2));
   });
 });
