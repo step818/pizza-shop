@@ -6,24 +6,24 @@ function Pizza (size, toppings, price) {
 }
 
 Pizza.prototype.checkSize = function() {
-  if(this.size === "sm") {
+  if(this.size === "Personal") {
     this.price += 9.99;
-  } else if (this.size === "md") {
+  } else if (this.size === "Medium") {
     this.price += 14.99;
-  } else if (this.size === "lg") {
+  } else if (this.size === "Large") {
     this.price += 18.99;
-  } else if (this.size === "xl") {
+  } else if (this.size === "Sicilian") {
     this.price += 21.99;
+  } else {
+    alert("Please choose a size to complete your order.");
   }
 }
 
 Pizza.prototype.checkToppings = function() {
   if (this.toppings.length === 0) {
     this.price = this.price;
-    console.log("hey");
   } else if (this.toppings.length <= 2) {
     this.price += 1.50;
-    console.log("345");
   } else if (this.toppings <= 5) {
     this.price += 3.00;
   } else {
@@ -38,10 +38,10 @@ $(document).ready(function() {
     var inputtedSize = $("#size").val();
     var inputtedToppings = []; $("input:checkbox[name=topping]:checked").each(function () {
       inputtedToppings.push($(this).val());
-    });
+    })
     var newPizza = new Pizza(inputtedSize, inputtedToppings);
     newPizza.checkSize();
     newPizza.checkToppings();
-    $("#order-cost").text("You ordered a " + newPizza.size + " pizza with " + newPizza.toppings + "added to it. Your total is " + "$" + newPizza.price.toFixed(2));
+    $("#order-cost").text("You ordered a " + newPizza.size + " pizza with " + newPizza.toppings + " added to it. Your total is " + "$" + newPizza.price.toFixed(2));
   });
 });
