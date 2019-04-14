@@ -11,27 +11,43 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Mama Mia Pizzeria<h1>
+        <h1>Mama Mia's Pizzeria<h1>
       </div>
-      <h2>Create your own pizza is the only way to go</h2>
+      <h2>The best pizza you can order but can't buy</h2>
 <!--Order Cost Content  -->
       <form id="new-pizza">
-        <div class="cost">
-          <div class="panel panel info">
-            <div class="panel-heading">
-              <h3>Order cost</h3>
-              <p>Total: <span id="order-cost">$0.00</span></p>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="cost">
+              <div class="panel panel info">
+                <div class="panel-heading">
+                  <h4>Order cost</h4>
+                  <p><strong>Total: <span id="order-cost">$0.00</span></strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div id="xtra">
+              <h3>Price for toppings:</h3>
+              <ul><strong>
+                <li>1 - 2 toppings:<br> $1.50 xtra</li>
+                <li>3 - 5 toppings:<br> $3.00 xtra</li>
+                <li>6 - 9 toppings:<br> $4.50 xtra</li></strong>
+              </ul>
             </div>
           </div>
         </div>
 <!--Select box for choosing Size -->
-        <select class="form-control" id="size">
-          <option value="default">Click to choose size</option>
-          <option value="Personal">Personal ---- $9.99</option>
-          <option value="Medium">Medium ---- $14.99</option>
-          <option value="Large">Large ---- $18.99</option>
-          <option value="Sicilian">Sicilian ---- $21.99</option>
-        </select>
+        <div class="col-md-5">
+          <select class="form-control" id="size">
+            <option value="default">Click to choose size</option>
+            <option value="Personal">Personal ---- $9.99</option>
+            <option value="Medium">Medium ---- $14.99</option>
+            <option value="Large">Large ---- $18.99</option>
+            <option value="Sicilian">Sicilian ---- $21.99</option>
+          </select>
+        </div>
   <!--Radio buttons for choosing Toppings  -->
         <div id="show-toppings">
           <div class="form-group">

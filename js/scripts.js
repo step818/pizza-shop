@@ -20,14 +20,14 @@ Pizza.prototype.checkSize = function() {
 }
 
 Pizza.prototype.checkToppings = function() {
-  if (this.toppings.length === 0) {
-    this.price = this.price;
-  } else if (this.toppings.length <= 2) {
-    this.price += 1.50;
-  } else if (this.toppings <= 5) {
+  if (this.toppings.length > 5) {
+    this.price = + 4.50;
+  } else if (this.toppings.length > 3) {
     this.price += 3.00;
+  } else if (this.toppings > 0) {
+    this.price += 1.50;
   } else {
-    this.price += 4.50;
+    this.price = this.price;
   }
 }
 
@@ -42,6 +42,8 @@ $(document).ready(function() {
     var newPizza = new Pizza(inputtedSize, inputtedToppings);
     newPizza.checkSize();
     newPizza.checkToppings();
-    $("#order-cost").text("You ordered a " + newPizza.size + " pizza with " + newPizza.toppings + " added to it. Your total is " + "$" + newPizza.price.toFixed(2));
+    if (newPizza.toppings.length > 0) {
+      $("#order-cost").text("You ordered a " + newPizza.size + " pizza with " + newPizza.toppings.toString() + " added to it. Your total is " + "$" + newPizza.price.toFixed(2));
+    } else { $("#order-cost").text("You ordered a " + newPizza.size + " cheese pizza. Your total is " + "$" + newPizza.price.toFixed(2)); }
   });
 });
