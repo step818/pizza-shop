@@ -1,4 +1,4 @@
-# _Pizza Shop_
+# _Object-Oriented JavaScript_
 
 #### _4th Independent project, 04/12/2019_
 
@@ -16,7 +16,7 @@ This webpage is an exercise designed to take user input for a custom pizza order
 | :-----------------    | :------------------ | :-------------- |
 | Returns a summary of users choices with a calculated cost. | _Input:_ "Personal", "Spinach", "Mushrooms" | _Output:_ "You ordered a personal pizza with spinach and mushrooms. Your total is 11.49" |
 | Returns an alert message when no size is selected. | _Input:_ "Click to choose size" | _Output:_ (Pop-up):"Please choose a size to complete your order." |
-
+|Returns a summary that cheese pizza and desired size when no toppings have been selected. | _Input:_ "Medium" | _Output:_ "You have ordered a Medium cheese pizza." |
 
 ## Setup/Installation Requirements
 
