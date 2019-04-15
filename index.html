@@ -17,16 +17,6 @@
 <!--Order Cost Content  -->
       <form id="new-pizza">
         <div class="row">
-          <div class="col-md-8">
-            <div class="cost">
-              <div class="panel panel info">
-                <div class="panel-heading">
-                  <h4>Order cost</h4>
-                  <p><strong>Total: <span id="order-cost">$0.00</span></strong></p>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="col-md-4">
             <div id="xtra">
               <h3>Price for toppings:</h3>
@@ -37,32 +27,41 @@
               </ul>
             </div>
           </div>
-        </div>
-<!--Select box for choosing Size -->
-        <div class="col-md-5">
-          <select class="form-control" id="size">
-            <option value="default">Click to choose size</option>
-            <option value="Personal">Personal ---- $9.99</option>
-            <option value="Medium">Medium ---- $14.99</option>
-            <option value="Large">Large ---- $18.99</option>
-            <option value="Sicilian">Sicilian ---- $21.99</option>
-          </select>
-        </div>
-  <!--Radio buttons for choosing Toppings  -->
-        <div id="show-toppings">
-          <div class="form-group">
-            <input type="checkbox" name="topping" value="pepperoni"> Pepperoni <br>
-            <input type="checkbox" name="topping" value="sausage"> Sausage <br>
-            <input type="checkbox" name="topping" value="chicken"> Chicken <br>
-            <input type="checkbox" name="topping" value="onion"> Onion <br>
-            <input type="checkbox" name="topping" value="olives"> Black Olives <br>
-            <input type="checkbox" name="topping" value="green-peppers"> Green Peppers <br>
-            <input type="checkbox" name="topping" value="mushrooms"> Mushrooms <br>
-            <input type="checkbox" name="topping" value="pineapple"> Pineapple <br>
-            <input type="checkbox" name="topping" value="spinach"> Spinach <br>
+          <div class="col-md-6">
+            <select class="form-control" id="size">
+              <option value="default">Click to choose size</option>
+              <option value="Personal">Personal ---- $9.99</option>
+              <option value="Medium">Medium ---- $14.99</option>
+              <option value="Large">Large ---- $18.99</option>
+              <option value="Sicilian">Sicilian ---- $21.99</option>
+            </select>
+              <div id="show-toppings">
+                <div class="form-group">
+                  <input type="checkbox" name="topping" value="pepperoni"> Pepperoni <br>
+                  <input type="checkbox" name="topping" value="sausage"> Sausage <br>
+                  <input type="checkbox" name="topping" value="chicken"> Chicken <br>
+                  <input type="checkbox" name="topping" value="onion"> Onion <br>
+                  <input type="checkbox" name="topping" value="olives"> Black Olives <br>
+                  <input type="checkbox" name="topping" value="green-peppers"> Green Peppers <br>
+                  <input type="checkbox" name="topping" value="mushrooms"> Mushrooms <br>
+                  <input type="checkbox" name="topping" value="pineapple"> Pineapple <br>
+                  <input type="checkbox" name="topping" value="spinach"> Spinach <br>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-danger">Add to cart</button>
+            </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-danger">Add to cart</button>
+            <div class="cost">
+              <div class="panel panel info">
+                <div class="panel-heading">
+                  <h4>Order cost</h4>
+                  <p><strong>Total: <span id="order-cost">$0.00</span></strong></p>
+                </div>
+              </div>
+            </div>
       </form>
     </div>
   </body>
